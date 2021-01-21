@@ -17,7 +17,7 @@ module.exports = {
   
   path: {
     // webpack.config.entry
-		entry: '',
+    entry: '',
     // webpack.config.output.path
     output: 'dist',
     // webpack.config.output.publicPath, HtmlWebpackPlugin.publicPath
