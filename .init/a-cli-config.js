@@ -23,11 +23,11 @@ module.exports = {
   devtool: 'eval-source-map',
   // HtmlWebpackPlugin.templateParameters
   templateParameters: {},
-  // webpack.config.environment
+  // webpack.EnvironmentPlugin
   environment: {},
-  // webpack.config.define
+  // webpack.DefinePlugin
   define: {},
-  // webpack.config.provide
+  // webpack.ProvidePlugin
   provide: {},
   // use threadLoader {Boolean|Object} thread-loader.options
   threadLoader: true,
