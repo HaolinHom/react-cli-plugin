@@ -55,6 +55,8 @@ module.exports = {
       clean: true,
       // {Boolean|Object} postcss-normalize
       normalize: true,
+      // {Boolean|Object} postcss-pxtorem
+      pxtorem: false,
     },
     // {Boolean|Object} sass-loader.options.lessOptions
     less: false,

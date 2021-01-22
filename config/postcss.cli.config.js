@@ -12,6 +12,7 @@ module.exports = function (context, args) {
   const _presetEnv = postcssPlugins?.presetEnv ?? DEFAULT.POSTCSS_PLUGINS.PRESET_ENV;
   const _clean = postcssPlugins?.clean ?? DEFAULT.POSTCSS_PLUGINS.CLEAN;
   const _normalize = postcssPlugins?.normalize ?? DEFAULT.POSTCSS_PLUGINS.NORMALIZE;
+  const _pxtorem = postcssPlugins?.pxtorem ?? DEFAULT.POSTCSS_PLUGINS.PX_TO_REM;
 
   return function(type) {
     let config = {
@@ -28,6 +29,11 @@ module.exports = function (context, args) {
     if (_mixins) {
       const postcss_mixins = require(require.resolve('postcss-mixins'));
       config.plugins.push(postcss_mixins);
+    }
+
+    if (_pxtorem) {
+      const postcss_pxtorem = require(require.resolve('postcss-mixins'))(getValidParams(_pxtorem));
+      config.plugins.push(postcss_pxtorem);
     }
 
     if (isEnvProduction && _presetEnv) {
