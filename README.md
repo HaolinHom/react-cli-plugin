@@ -53,6 +53,8 @@ module.exports = {
       presetEnv: true,
       // {Boolean|Object} postcss-clean
       clean: true,
+      // {Boolean|Object} postcss-normalize
+      normalize: true,
     },
     // {Boolean|Object} sass-loader.options.lessOptions
     less: false,

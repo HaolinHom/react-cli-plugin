@@ -11,6 +11,7 @@ module.exports = {
     MIXINS: true,
     PRESET_ENV: true,
     CLEAN: true,
+    NORMALIZE: true,
     PX_TO_REM: true,
     CONVERT_FONT_SIZE: true,
   },
