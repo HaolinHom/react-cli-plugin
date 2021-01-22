@@ -37,11 +37,11 @@ module.exports = function (context, args) {
       ));
       config.plugins.push(postcss_preset);
     }
-    /* FIXME: postcss-clean@1.1.0 is not support POSTCSS_8
+
     if (isEnvProduction && _clean) {
       const postcss_clean = require(require.resolve('postcss-clean'))();
       config.plugins.push(postcss_clean);
-    }*/
+    }
 
     return config;
   };

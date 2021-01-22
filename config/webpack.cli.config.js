@@ -8,7 +8,6 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
@@ -425,11 +424,6 @@ module.exports = function (context, args) {
           },
           mode: "write-references",
         },
-      }),
-      isEnvDevelopment && useTypeScript && new ForkTsCheckerNotifierWebpackPlugin({
-        excludeWarnings: true,
-        skipSuccessful: true,
-        skipFirstNotification: true,
       }),
 
       isBundleAnalyzer && new BundleAnalyzerPlugin({
