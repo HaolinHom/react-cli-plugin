@@ -1,5 +1,5 @@
+const evalSourceMapMiddleware = require("react-dev-utils/evalSourceMapMiddleware");
 const errorOverlayMiddleware = require("react-dev-utils/errorOverlayMiddleware");
-const noopServiceWorkerMiddleware = require("react-dev-utils/noopServiceWorkerMiddleware");
 
 module.exports = function (context, args) {
   const { devServer } = context.config;
@@ -17,9 +17,9 @@ module.exports = function (context, args) {
     },
     devServer || {},
     {
-      before(app) {
+      before(app, server) {
+        app.use(evalSourceMapMiddleware(server));
         app.use(errorOverlayMiddleware());
-        app.use(noopServiceWorkerMiddleware(''));
       },
     }
   );
