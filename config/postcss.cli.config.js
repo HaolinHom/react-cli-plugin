@@ -32,7 +32,7 @@ module.exports = function (context, args) {
     }
 
     if (_pxtorem) {
-      const postcss_pxtorem = require(require.resolve('postcss-mixins'))(getValidParams(_pxtorem));
+      const postcss_pxtorem = require(require.resolve('postcss-pxtorem'))(getValidParams(_pxtorem));
       config.plugins.push(postcss_pxtorem);
     }
 
