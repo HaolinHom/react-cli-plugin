@@ -199,7 +199,7 @@ module.exports = function (context, args) {
       path: isEnvProduction ? currentOutputPath : undefined,
       publicPath,
 			filename: isEnvProduction
-				? 'static/js/[name].[hash:8].js'
+				? 'static/js/[name].[fullhash:8].js'
 				: isEnvDevelopment && 'static/js/[name]/[name].js',
 			chunkFilename: isEnvProduction
 				? 'static/js/[name].[contenthash:8].chunk.js'
@@ -445,7 +445,7 @@ module.exports = function (context, args) {
       isEnvDevelopment && new FriendlyErrorsWebpackPlugin(),
 
       isEnvProduction && new MiniCssExtractPlugin({
-        filename: "static/css/[name].[hash:8].css",
+        filename: "static/css/[name].[fullhash:8].css",
         chunkFilename: "static/css/[name].[contenthash:8].css",
       }),
 
